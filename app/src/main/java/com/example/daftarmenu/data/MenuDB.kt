@@ -2,6 +2,7 @@ package com.example.daftarmenu.data
 
 import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.security.AccessControlContext
 import java.time.Instant
@@ -12,13 +13,21 @@ abstract class MenuDB:RoomDatabase(){
     abstract fun menuDao() :MenuDao
 
     companion object{
-        var Instant:MenuDB?=null
-        fun  getInstance(context: Context){
+        var INSTANCE:MenuDB?=null
 
+        fun  getInstance(context: Context):MenuDB?{
+            if (INSTANCE==null){
+                synchronized(MenuDB::class.java){
+                    INSTANCE= Room.databaseBuilder(
+                        context.applicationContext,MenuDB::class.java,"Menu.db"
+                    ).build()
+                }
+            }
+            return INSTANCE
         }
 
         fun destroyInstance(){
-            INSTANT = null
+            INSTANCE = null
         }
     }
 }

@@ -11,5 +11,5 @@ data class MenuMinumanModel(
     var namaMenu: String,
     var hargaMenu: String,
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    var gambarMenu: Byte
+    var gambarMenu: ByteArray
 )
