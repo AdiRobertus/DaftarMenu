@@ -13,7 +13,7 @@ interface MenuDao {
     fun tambahMakanan(makananModel: MenuMakananModel)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun tambahMakanan(minumanModel: MenuMinumanModel)
+    fun tambahMinuman(minumanModel: MenuMinumanModel)
 
     @Query("select * from MenuMakananModel")
     fun ambilMenuMakanan():LiveData<List<MenuMakananModel>>

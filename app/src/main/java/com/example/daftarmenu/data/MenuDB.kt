@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import java.security.AccessControlContext
 import java.time.Instant
 
-@Database(entities = arrayOf(MenuMakananModel::class,MenuMinumanModel::class),version = 1)
+@Database(entities = arrayOf(MenuMakananModel::class,MenuMinumanModel::class),version = 2)
 abstract class MenuDB:RoomDatabase(){
 
     abstract fun menuDao() :MenuDao

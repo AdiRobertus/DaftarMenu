@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.daftarmenu.R.layout
-import com.example.daftarmenu.adapter.RvMakananAdapter.MenuViewHolder
 import com.example.daftarmenu.data.MenuMakananModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_list_menu.iv_menu
