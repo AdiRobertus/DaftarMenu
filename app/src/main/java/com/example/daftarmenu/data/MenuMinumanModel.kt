@@ -1,7 +1,15 @@
 package com.example.daftarmenu.data
 
-data class MenuMinumanModel (
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class MenuMinumanModel(
+    @PrimaryKey(autoGenerate = true)
+    var  idMenu:Int,
     var namaMenu: String,
     var hargaMenu: String,
-    var gambarMenu: Int
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    var gambarMenu: Byte
 )
